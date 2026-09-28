@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# PyCharm
+.idea/
+
+# SQLite (agar tasodifan yaratilsa)
+db.sqlite3
