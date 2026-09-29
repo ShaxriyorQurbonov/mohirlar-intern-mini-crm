@@ -34,8 +34,11 @@ ALLOWED_HOSTS = config(
     default="localhosts,127.0.0.1",
 ).split(",")
 
-if config ("RENDER", default=False, cast=bool):
-    ALLOWED_HOSTS.append("RENDER_EXTERNAL_HOSTNAME", default="")
+if config("RENDER", default=False, cast=bool):
+    render_hostname = config("RENDER_EXTERNAL_HOSTNAME", default="")
+
+    if render_hostname:
+        ALLOWED_HOSTS.append(render_hostname)
 # Application definition
 
 INSTALLED_APPS = [
