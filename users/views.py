@@ -4,11 +4,11 @@ from rest_framework import generics
 from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework.response import responses, Response
 
-from .serializers import RegiterSerializer
+from .serializers import RegisterSerializer
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
-    serializer_class = RegiterSerializer
+    serializer_class = RegisterSerializer
     permission_classes = [AllowAny]
 
 class MeView(generics.RetrieveAPIView):
