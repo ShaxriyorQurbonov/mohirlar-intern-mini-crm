@@ -13,3 +13,4 @@ __pycache__/
 
 # SQLite (agar tasodifan yaratilsa)
 db.sqlite3
+staticfiles/

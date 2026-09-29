@@ -25,7 +25,15 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
+from django.http import JsonResponse
+
+def home(request):
+    return JsonResponse({
+        "message": "Mini CRM API",
+        "docs" : "/api/docs/"
+    })
 urlpatterns = [
+    path("", home, name="home"),
     path('admin/', admin.site.urls),
 
     path("api/auth/", include("users.urls")),
